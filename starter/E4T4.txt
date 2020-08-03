@@ -1,0 +1,21 @@
+
+# What additional architectural change can be made to reduce the internet facing attack surface of the web application instance.
+
+- Add a network access control list (ACL) for the VPC that acts as a firewall for controlling traffic in and out of one or more subnets. 
+
+
+# Assuming the IAM permissions for the S3 bucket are still insecure, would creating VPC private endpoints for S3 prevent the unauthorized access to the secrets bucket.
+
+- A VPC endpoint enables you to privately connect your VPC to supported AWS services and VPC endpoint services powered by AWS PrivateLink without requiring an internet gateway, NAT device, VPN connection, or AWS Direct Connect connection. Instances in your VPC do not require public IP addresses to communicate with resources in the service. Traffic between your VPC and the other service does not leave the Amazon network. But still it may insecure if IAM permissions are insecure. 
+
+
+# Will applying default encryption setting to the s3 buckets encrypt the data that already exists?
+
+- No. It won't encrypt the data already exists.
+
+
+# What would happen if the original cloud formation templates are applied to this environment.
+
+It depends on the CFN operations. 
+- Updating existing stacks: Cloudformation can't create change set and will not make any changes because all changes to the resources were made manually.
+- Creating new stacks: Original templates would create same vulnerabilites. 

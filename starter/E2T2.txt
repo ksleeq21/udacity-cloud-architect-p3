@@ -1,0 +1,15 @@
+# Research and analyze which of the vulnerabilities appear to be related to the code that was deployed for the environment in this project.
+
+Amazon Config Noncompliant Rule: securityhub-encrypted-volumes-e13d3f52: Two EC2 Volumes are not encrypted
+
+Amazon Inspector finding: Finding for assessment target 'Assessment-Target-All-Instances' and template 'Assessment-Template-Default'
+: On this instance, UDP port 23, which is associated with Telnet, is reachable from the internet. You can install the Inspector agent on this instance and re-run the assessment to check for any process listening on this port. The instance i-00cd740478c384310 is located in VPC vpc-05bf6d24a171e2d36 and has an attached ENI eni-0b5472d9423ec4e51 which uses network ACL acl-0583ab4257001b822. The port is reachable from the internet through Security Group sg-0e2e9cd95bed778c1 and IGW igw-0e5df6539dfa5241f
+
+
+# Bonus - provide recommendations on how to remediate the vulnerabilities.
+
+Amazon Config Noncompliant Rule: securityhub-encrypted-volumes-e13d3f52: Two EC2 Volumes are not encrypted
+- Remediation: Enable server-side encryption on EBS volumes.
+
+Amazon Inspector finding: Finding for assessment target 'Assessment-Target-All-Instances' and template 'Assessment-Template-Default'
+- Remediation: Edit the Security Group sg-0e2e9cd95bed778c1 to remove access from the internet on port 23

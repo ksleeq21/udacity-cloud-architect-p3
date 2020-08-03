@@ -1,0 +1,11 @@
+# Describe GuardDuty findings that were detected related to the brute force attack
+
+- One instance was being used as an attacker to perform SSH brute force attacks to gain unauthorized access. 
+- One instance was being attacked by SSH brute force attack from another instance.
+
+
+# Research the AWS Guard Duty documentation page and explain how GuardDuty may have detected this attack - i.e. what was its source of information.
+
+- GuardDuty is a continuous security monitoring service that analyzes and processes data sources such as VPC Flow Logs, CloudTrail event logs, S3 data event logs and DNS logs. 
+- SSH Brute force asstacks can occur because a SecurityGroup allows connections from all sources to port number 22.
+- GuardDuty detects huge number of requests sent from a single instance to a specific instance and this means that requesting instance is currently being used as an attacker of SSH brute force attack. 

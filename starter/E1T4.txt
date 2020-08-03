@@ -1,0 +1,11 @@
+Based on the architecture diagram, and the steps you have taken so far to upload data and access the application web service, identify at least 2 obvious poor practices as it relates to security.  Include justification.
+
+# Poor practice 1
+S3 Buckets do not have BucketPolicy attached.
+S3 Buckets are not encryption enabled. 
+
+# Poor practice 2
+The subnets do not have Network ACL.
+
+# Poor practice 3
+There is only one EC2 instance added to the Target Group of ALB. This can not accomplish High Availability.
